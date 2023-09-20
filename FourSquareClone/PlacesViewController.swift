@@ -22,7 +22,7 @@ class PlacesViewController: UIViewController {
     }
     
     @objc func addButtonClicked(){
-        // perform segue
+        performSegue(withIdentifier: "toAddNewPlaceVC", sender: nil)
     }
     
     @objc func logOutButtonClicked(){
@@ -30,7 +30,7 @@ class PlacesViewController: UIViewController {
             if error != nil {
                 alertManager.showAlertDialog(context: self, title: "Error", message: error?.localizedDescription)
             }else{
-                performSegue(withIdentifier: "fromHomeToLoginScreen", sender: nil)
+                performSegue(withIdentifier: "toLoginVC", sender: nil)
             }
         }
     }
