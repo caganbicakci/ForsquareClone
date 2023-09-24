@@ -11,6 +11,8 @@
 		9733DCDD2AB8635600571486 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9733DCDC2AB8635600571486 /* SignupViewController.swift */; };
 		9733DCE12AB9807C00571486 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9733DCE02AB9807C00571486 /* AlertManager.swift */; };
 		9733DCE32AB9883D00571486 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9733DCE22AB9883D00571486 /* PlacesViewController.swift */; };
+		9789009B2AC072EF00D517E1 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9789009A2AC072EF00D517E1 /* PlaceDetailViewController.swift */; };
+		9789009D2AC0781600D517E1 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9789009C2AC0781600D517E1 /* PlaceModel.swift */; };
 		979C413C2ABB427B009F304B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979C413B2ABB427B009F304B /* MapViewController.swift */; };
 		97B92AE32ABA33B000340B81 /* AddNewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B92AE22ABA33B000340B81 /* AddNewPlaceViewController.swift */; };
 		97D6335E2AB78ABF0066990A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D6335D2AB78ABF0066990A /* AppDelegate.swift */; };
@@ -26,6 +28,8 @@
 		9733DCDC2AB8635600571486 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		9733DCE02AB9807C00571486 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		9733DCE22AB9883D00571486 /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
+		9789009A2AC072EF00D517E1 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
+		9789009C2AC0781600D517E1 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		979C413B2ABB427B009F304B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		97B92AE22ABA33B000340B81 /* AddNewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPlaceViewController.swift; sourceTree = "<group>"; };
 		97D6335A2AB78ABF0066990A /* FourSquareClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourSquareClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,10 +94,12 @@
 				9733DCE22AB9883D00571486 /* PlacesViewController.swift */,
 				97B92AE22ABA33B000340B81 /* AddNewPlaceViewController.swift */,
 				979C413B2ABB427B009F304B /* MapViewController.swift */,
+				9789009A2AC072EF00D517E1 /* PlaceDetailViewController.swift */,
 				97D633632AB78ABF0066990A /* Main.storyboard */,
 				97D633662AB78AC00066990A /* Assets.xcassets */,
 				97D633682AB78AC00066990A /* LaunchScreen.storyboard */,
 				97D6336B2AB78AC00066990A /* Info.plist */,
+				9789009C2AC0781600D517E1 /* PlaceModel.swift */,
 			);
 			path = FourSquareClone;
 			sourceTree = "<group>";
@@ -221,12 +227,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9789009B2AC072EF00D517E1 /* PlaceDetailViewController.swift in Sources */,
 				9733DCE32AB9883D00571486 /* PlacesViewController.swift in Sources */,
 				97D633622AB78ABF0066990A /* LoginViewController.swift in Sources */,
 				97D6335E2AB78ABF0066990A /* AppDelegate.swift in Sources */,
 				97B92AE32ABA33B000340B81 /* AddNewPlaceViewController.swift in Sources */,
 				9733DCE12AB9807C00571486 /* AlertManager.swift in Sources */,
 				9733DCDD2AB8635600571486 /* SignupViewController.swift in Sources */,
+				9789009D2AC0781600D517E1 /* PlaceModel.swift in Sources */,
 				97D633602AB78ABF0066990A /* SceneDelegate.swift in Sources */,
 				979C413C2ABB427B009F304B /* MapViewController.swift in Sources */,
 			);

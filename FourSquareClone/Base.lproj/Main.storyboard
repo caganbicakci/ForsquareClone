@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gg7-2t-kYd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gg7-2t-kYd">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -220,6 +221,7 @@
                         <outlet property="placesTableView" destination="BKL-5n-IKs" id="bgA-kh-tE3"/>
                         <segue destination="gg7-2t-kYd" kind="presentation" identifier="toLoginVC" modalPresentationStyle="fullScreen" id="4vv-wt-aZj"/>
                         <segue destination="Xrb-pn-tYA" kind="show" identifier="toAddNewPlaceVC" id="lEK-T1-JR5"/>
+                        <segue destination="POa-dz-c68" kind="show" identifier="toPlaceDetailVC" id="MMu-ZN-m0F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xK0-FM-8nH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -298,15 +300,70 @@
                     <navigationItem key="navigationItem" id="JCf-PE-S5b"/>
                     <connections>
                         <outlet property="placeAtmosphereField" destination="7a2-bT-vOR" id="tNE-5Y-o8W"/>
+                        <outlet property="placeImageView" destination="ke7-KC-vn8" id="Wl3-VR-hqM"/>
                         <outlet property="placeNameField" destination="o29-Ol-MgV" id="OOM-71-DEx"/>
                         <outlet property="placeTypeField" destination="XXp-Ea-h00" id="dPM-Oo-jK3"/>
-                        <outlet property="selectImageView" destination="ke7-KC-vn8" id="WzJ-xy-d2n"/>
                         <segue destination="mlD-ew-qhI" kind="show" identifier="toMapVC" id="acH-nP-0rR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Td-4h-Zni" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3574.8091603053435" y="840.84507042253529"/>
+        </scene>
+        <!--Place Detail View Controller-->
+        <scene sceneID="hB3-7w-kDc">
+            <objects>
+                <viewController id="POa-dz-c68" customClass="PlaceDetailViewController" customModule="FourSquareClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4ep-PM-mba">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OUy-vR-aOs">
+                                <rect key="frame" x="0.0" y="44" width="393" height="284"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DRQ-sE-nWa">
+                                <rect key="frame" x="0.0" y="539" width="393" height="313"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="placeNameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qx-cc-Act">
+                                <rect key="frame" x="85" y="349" width="223" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="placeTypeLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2e-RW-ao7">
+                                <rect key="frame" x="85" y="403" width="223" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="placeAtmosphereLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdo-U4-v0Z">
+                                <rect key="frame" x="85" y="457" width="223" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7ah-j0-8uZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="D5t-Xe-o4f"/>
+                    <connections>
+                        <outlet property="placeAtmosphereLabel" destination="vdo-U4-v0Z" id="xdL-Xd-jXE"/>
+                        <outlet property="placeImageView" destination="OUy-vR-aOs" id="H1O-oy-yk4"/>
+                        <outlet property="placeMapView" destination="DRQ-sE-nWa" id="77l-GS-Jto"/>
+                        <outlet property="placeNameLabel" destination="0qx-cc-Act" id="BEw-64-Hjz"/>
+                        <outlet property="placeTypeLabel" destination="X2e-RW-ao7" id="QS2-Jb-FOO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bAr-t1-muo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2672.5190839694656" y="1590.8450704225354"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tpc-od-vSP">
