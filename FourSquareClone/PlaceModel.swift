@@ -12,10 +12,13 @@ class PlaceModel {
     
     static let sharedInstance = PlaceModel()
     
+    var placeId: String?
     var placeName : String?
     var placeType : String?
     var placeAtmosphere : String?
     var placeImage : UIImage?
+    var latitude: Double?
+    var longitude: Double?
     
-    private init() {}
+    init() {}
 }

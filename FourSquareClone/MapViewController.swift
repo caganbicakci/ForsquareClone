@@ -7,14 +7,16 @@
 
 import UIKit
 import MapKit
+import Parse
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-    let locationManager = CLLocationManager()
     
-    var selectedLatitude : Double?
-    var selectedLongitude: Double?
+    let alertManager = AlertManager()
+    
+    let locationManager = CLLocationManager()
+    let placeModel = PlaceModel.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +45,26 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     @objc func saveButtonClicked(){
-        // TODO: Parse Save
+        let placeModel = PlaceModel.sharedInstance
+        let object = PFObject(className: "Places")
+        object["name"] = placeModel.placeName
+        object["type"] = placeModel.placeType
+        object["atmosphere"] = placeModel.placeAtmosphere
+        object["latitude"] = placeModel.latitude
+        object["longitude"] = placeModel.longitude
+        
+        if let imageData = placeModel.placeImage?.jpegData(compressionQuality: 0.5){
+            object["image"] = PFFileObject(name: "image.jpg", data: imageData)
+            
+        }
+        
+        object.saveInBackground { success, error in
+            if error != nil {
+                self.alertManager.showAlertDialog(context: self, title: "Error", message: error?.localizedDescription)
+            }else{
+                self.performSegue(withIdentifier: "fromMapVCtoPlacesVC", sender: nil)
+            }
+        }
     }
     
     @objc func selectLocation(gestureRecognizer: UIGestureRecognizer){
@@ -57,8 +78,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             annotation.subtitle = PlaceModel.sharedInstance.placeType
             
             self.mapView.addAnnotation(annotation)
-            self.selectedLatitude = coordinates.latitude
-            self.selectedLongitude = coordinates.longitude
+            self.placeModel.latitude = coordinates.latitude
+            self.placeModel.longitude = coordinates.longitude
             
         }
     }

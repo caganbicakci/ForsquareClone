@@ -86,20 +86,20 @@
 		97D6335C2AB78ABF0066990A /* FourSquareClone */ = {
 			isa = PBXGroup;
 			children = (
-				9733DCE02AB9807C00571486 /* AlertManager.swift */,
 				97D6335D2AB78ABF0066990A /* AppDelegate.swift */,
 				97D6335F2AB78ABF0066990A /* SceneDelegate.swift */,
+				9789009C2AC0781600D517E1 /* PlaceModel.swift */,
 				97D633612AB78ABF0066990A /* LoginViewController.swift */,
 				9733DCDC2AB8635600571486 /* SignupViewController.swift */,
 				9733DCE22AB9883D00571486 /* PlacesViewController.swift */,
 				97B92AE22ABA33B000340B81 /* AddNewPlaceViewController.swift */,
 				979C413B2ABB427B009F304B /* MapViewController.swift */,
 				9789009A2AC072EF00D517E1 /* PlaceDetailViewController.swift */,
+				9733DCE02AB9807C00571486 /* AlertManager.swift */,
 				97D633632AB78ABF0066990A /* Main.storyboard */,
 				97D633662AB78AC00066990A /* Assets.xcassets */,
 				97D633682AB78AC00066990A /* LaunchScreen.storyboard */,
 				97D6336B2AB78AC00066990A /* Info.plist */,
-				9789009C2AC0781600D517E1 /* PlaceModel.swift */,
 			);
 			path = FourSquareClone;
 			sourceTree = "<group>";
